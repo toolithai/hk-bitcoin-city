@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HK Bitcoin City — Founding 100 Pilot Program</title>
+  <meta name="description" content="Join the founding 100 stores accepting Bitcoin in Hong Kong. A pilot program by the Bitcoin Association of Hong Kong and The Whale Lounge." />
+  <meta property="og:title" content="HK Bitcoin City — Founding 100 Pilot Program" />
+  <meta property="og:description" content="100 founding stores. One city. Be part of the first wave of Hong Kong's Bitcoin merchant economy." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --btc: #F7931A;
+      --btc-dim: #E8850F;
+      --dark: #0A0A0A;
+      --dark-2: #141414;
+      --dark-3: #1E1E1E;
+      --dark-4: #2A2A2A;
+      --gray: #777;
+      --gray-light: #A8A8A8;
+      --white: #FFFFFF;
+      --cream: #F0EDE6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logos {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-logos img { height: 40px; width: auto; }
+    .nav-logos .sep { width: 1px; height: 24px; background: rgba(255,255,255,0.12); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .btn-apply {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: var(--btc);
+      color: var(--dark);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-apply:hover {
+      background: #FFa030;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 12px 28px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--btc);
+      color: var(--btc);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--white);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('./images/hk-city.png') center center / cover no-repeat;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.3) 0%,
+        rgba(10,10,10,0.5) 40%,
+        rgba(10,10,10,0.92) 75%,
+        var(--dark) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      width: 100%;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--btc);
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .hero-label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 2px;
+      background: var(--btc);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 7vw, 84px);
+      font-weight: 700;
+      line-height: 1.0;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--btc);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--gray-light);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── ORANGE BAR ── */
+    .orange-bar {
+      height: 4px;
+      background: var(--btc);
+      width: 100%;
+    }
+
+    /* ── STATS ── */
+    .stats {
+      padding: 0;
+      background: var(--dark-2);
+    }
+
+    .stats-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 48px 40px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    /* ── QUOTE BREAK ── */
+    .quote-break {
+      padding: 100px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-break blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    .quote-break cite {
+      font-family: 'Space Grotesk', sans-serif;
+      font-style: normal;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--btc);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .quote-break cite span {
+      color: var(--gray);
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    /* ── SECTION UTIL ── */
+    .section-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--btc);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .section-p {
+      font-size: 16px;
+      color: var(--gray-light);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    /* ── WHY BITCOIN ── */
+    .why {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .why-item {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      cursor: default;
+      transition: padding-left 0.3s;
+    }
+
+    .why-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+    .why-item:hover { padding-left: 12px; }
+
+    .why-item h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .why-item h3::before {
+      content: '\2192';
+      color: var(--btc);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .why-item p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.65;
+      padding-left: 28px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      padding: 120px 0;
+      background: var(--dark-2);
+      position: relative;
+    }
+
+    .how::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--btc), transparent);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 64px;
+      counter-reset: step;
+    }
+
+    .step {
+      padding: 40px 24px 40px 28px;
+      position: relative;
+      border-left: 1px solid rgba(255,255,255,0.06);
+      counter-increment: step;
+    }
+
+    .step:first-child { border-left: 2px solid var(--btc); }
+
+    .step-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--btc);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .step h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+
+    /* ── DEVICE SECTION ── */
+    .device {
+      padding: 120px 0;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .device-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .device-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .device-image img {
+      max-height: 500px;
+      width: auto;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5));
+    }
+
+    .device-image::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(247,147,26,0.08) 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    .device-info .device-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .device-info .device-name span { color: var(--btc); }
+
+    .device-info .device-subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .device-info .device-desc {
+      font-size: 16px;
+      color: var(--gray-light);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 420px;
+    }
+
+    .device-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .device-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--btc);
+    }
+
+    .device-price-note {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .device-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .spec {
+      font-size: 13px;
+      color: var(--gray-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .spec::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--btc);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── CONNECT ── */
+    .connect {
+      padding: 100px 0;
+      background: var(--dark-2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 64px;
+    }
+
+    .connect-card {
+      padding: 36px 28px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s;
+    }
+
+    .connect-card:last-child { border-right: none; }
+    .connect-card:hover { background: rgba(247,147,26,0.03); }
+
+    .connect-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .connect-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+    .faq-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 10px;
+      color: var(--cream);
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 140px 40px;
+      text-align: center;
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--btc), transparent);
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cta h2 em {
+      font-style: italic;
+      color: var(--btc);
+    }
+
+    .cta p {
+      font-size: 16px;
+      color: var(--gray);
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: var(--dark);
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logos img { height: 32px; opacity: 0.5; transition: opacity 0.2s; }
+    .footer-logos img:hover { opacity: 1; }
+
+    .footer-text { font-size: 12px; color: var(--gray); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--btc); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 1024px) {
+      .steps { grid-template-columns: repeat(3, 1fr); }
+      .connect-grid { grid-template-columns: repeat(2, 1fr); }
+      .connect-card { border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .why-layout, .faq-layout, .device-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px; left: 0; right: 0;
+        background: rgba(10,10,10,0.97);
+        padding: 24px 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        gap: 20px;
+      }
+      .nav-inner, .section-wrap { padding: 0 24px; }
+      .hero-content { padding: 0 24px 60px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat { border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .step:first-child { border-left: none; border-top: 2px solid var(--btc); }
+      .connect-grid { grid-template-columns: 1fr; }
+      .connect-card { border-right: none; }
+      .device-image img { max-height: 350px; }
+      .quote-break { padding: 60px 24px; }
+      .cta { padding: 80px 24px; }
+      .footer-inner { padding: 0 24px; flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .device-specs { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions a { width: 100%; justify-content: center; text-align: center; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .cta-actions a { width: 100%; justify-content: center; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logos">
+        <img src="./images/bitcoin-hk-logo.png" alt="Bitcoin Association of Hong Kong" style="filter: invert(1);" />
+        <div class="sep"></div>
+        <img src="./images/whale-lounge-gold.png" alt="The Whale Lounge" />
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#why">Why Bitcoin</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#device">The Device</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScT1TYszNYMIk53u5FJpB5XYmlC5aam5vRnXw9eMJXNoZzZDQ/viewform?usp=sharing&ouid=111367302611666432321" target="_blank" class="btn-apply">Apply Now</a></li>
+      </ul>
+      <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-label">Pilot Program — Launching June 2026</div>
+      <h1>
+        HK is the Crypto Capital.<br />
+        Time to make it<br />
+        <em>the Bitcoin Capital.</em>
+      </h1>
+      <p class="hero-sub">
+        The exchanges, the regulation, the community — it's all here. What's missing is Bitcoin working on the street. In shops, bars, restaurants, and hotels. That's what we're building.
+      </p>
+      <div class="hero-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScT1TYszNYMIk53u5FJpB5XYmlC5aam5vRnXw9eMJXNoZzZDQ/viewform?usp=sharing&ouid=111367302611666432321" target="_blank" class="btn-apply">
+          Apply to the Pilot
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn-ghost">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORANGE BAR -->
+  <div class="orange-bar"></div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat reveal">
+        <div class="stat-number">20,000</div>
+        <div class="stat-label">Bitcoin Asia 2026<br/>Attendees, Aug</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-number">50M+</div>
+        <div class="stat-label">Annual HK Tourists<br/>Ready to Spend</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-number">100</div>
+        <div class="stat-label">Founding Stores<br/>in the Pilot</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-number">#1</div>
+        <div class="stat-label">Crypto Hub in Asia<br/>Next: Bitcoin Hub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-break reveal">
+    <blockquote>"Satisfaction of changing HK &amp; the world&hellip; Priceless."</blockquote>
+    <cite>
+      Ga&euml;lle Wizenberg <span>&mdash; Founder, The Whale Lounge</span>
+    </cite>
+  </div>
+
+  <!-- WHY ACCEPT BITCOIN -->
+  <section class="why" id="why">
+    <div class="section-wrap">
+      <div class="why-layout">
+        <div class="section-header reveal">
+          <span class="section-tag">Why Accept Bitcoin</span>
+          <h2 class="section-h2">Good for business.<br/>Good for Hong Kong.</h2>
+          <p class="section-p">Every reason to start now — from lower fees to new customers walking through your door. The first 100 stores are the ones this city will remember.</p>
+        </div>
+        <ul class="why-list">
+          <li class="why-item reveal">
+            <h3>No Chargebacks</h3>
+            <p>Bitcoin payments are final. No disputes, no reversals. Keep every dollar you earn.</p>
+          </li>
+          <li class="why-item reveal">
+            <h3>Near-Zero Fees</h3>
+            <p>A fraction of a percent via Lightning. Credit cards cost you 2 to 3.5% on every sale.</p>
+          </li>
+          <li class="why-item reveal">
+            <h3>Tourism &amp; Diaspora</h3>
+            <p>20,000 Bitcoin Asia attendees arrive in August. They already have Bitcoin. They want to spend it here.</p>
+          </li>
+          <li class="why-item reveal">
+            <h3>Your Customers Already Have It</h3>
+            <p>Over 2 million HK adults hold crypto. Some walk into your shop every day and can't spend it.</p>
+          </li>
+          <li class="why-item reveal">
+            <h3>Great Marketing</h3>
+            <p>Bitcoiners actively seek out and share businesses that accept. Word travels fast.</p>
+          </li>
+          <li class="why-item reveal">
+            <h3>Be a Founding Store</h3>
+            <p>The first 100 are the ones this city remembers. Get in now and own the story.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-h2">Five steps. That's it.</h2>
+        <p class="section-p">From setup to your first Bitcoin payment — we handle the heavy lifting.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">Step 01</div>
+          <h3>Get Your BASIC POS Device</h3>
+          <p>Touchscreen, NFC, QR scanning, receipt printer. Lightning-ready, powered by Blink.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">Step 02</div>
+          <h3>Setup at Your Location</h3>
+          <p>1 to 2 hours at your store. We handle the entire setup. You don't need to be technical.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">Step 03</div>
+          <h3>Customer Scans &amp; Pays</h3>
+          <p>Any Bitcoin wallet, any phone. QR code scan, confirmed in seconds.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">Step 04</div>
+          <h3>Bitcoin Lands in Your Wallet</h3>
+          <p>Your keys, your asset. Hold it or convert — your call, your timing.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">Step 05</div>
+          <h3>We Make Introductions</h3>
+          <p>Exchange partners, accountants, auditors. Real connections, not a Google search.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVICE -->
+  <section class="device" id="device">
+    <div class="section-wrap">
+      <div class="device-layout">
+        <div class="device-image reveal">
+          <img src="./images/miner.JPG" alt="BASIC Bitcoin POS Device" />
+        </div>
+        <div class="device-info reveal">
+          <span class="section-tag">Your Entry Into the Pilot</span>
+          <div class="device-name"><span>B</span>ASIC</div>
+          <div class="device-subtitle">Bitcoin POS Device</div>
+          <p class="device-desc">
+            Plug it in. That's the setup. No software to install, no integrations to manage. Just a device that lets your customers pay with Bitcoin.
+          </p>
+          <div class="device-specs">
+            <div class="spec">Touchscreen display</div>
+            <div class="spec">NFC tap-to-pay</div>
+            <div class="spec">QR code scanning</div>
+            <div class="spec">Built-in receipt printer</div>
+            <div class="spec">Lightning Network</div>
+            <div class="spec">Powered by Blink</div>
+          </div>
+          <div class="device-price-row">
+            <div class="device-price">HK$1,888</div>
+            <div class="device-price-note">One time</div>
+          </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScT1TYszNYMIk53u5FJpB5XYmlC5aam5vRnXw9eMJXNoZzZDQ/viewform?usp=sharing&ouid=111367302611666432321" target="_blank" class="btn-apply">
+            Apply &amp; Pre-Order
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="connect">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <span class="section-tag">What We Connect You To</span>
+        <h2 class="section-h2">You're not figuring this out alone.</h2>
+      </div>
+      <div class="connect-grid">
+        <div class="connect-card reveal">
+          <h3>Off-Ramp Channels</h3>
+          <p>Convert when you decide. We connect you to exchange partners. You pick the timing.</p>
+        </div>
+        <div class="connect-card reveal">
+          <h3>BTC-Friendly Auditors</h3>
+          <p>Auditors who already know how to handle Bitcoin on a balance sheet. No guesswork.</p>
+        </div>
+        <div class="connect-card reveal">
+          <h3>BTC-Friendly Accountants</h3>
+          <p>Accountants who've done this in HK before. No learning curve on your bill.</p>
+        </div>
+        <div class="connect-card reveal">
+          <h3>Merchant Support</h3>
+          <p>Dedicated Telegram group and weekly meetups. Questions answered, community built.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-wrap">
+      <div class="faq-layout">
+        <div class="section-header reveal">
+          <span class="section-tag">Common Questions</span>
+          <h2 class="section-h2">Straight answers.</h2>
+          <p class="section-p">No jargon, no runaround. Here's what merchants ask before signing up.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <h3>"What if Bitcoin price drops after I receive it?"</h3>
+            <p>You hold it like any other asset. When you want to convert, we put you in front of exchange partners who can do it properly and quickly.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>"How does accounting and tax work?"</h3>
+            <p>We connect you with accountants and auditors who already deal with this in HK. You're not figuring it out from scratch.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>"Is this complicated for my staff?"</h3>
+            <p>Customer scans the QR on the BASIC device. You see a confirmation. Market vendors have picked it up in under ten minutes.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>"Do I need a license?"</h3>
+            <p>No. Accepting Bitcoin for goods and services doesn't require an SFC license. The pilot is set up to be compliant from the start.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="apply">
+    <div class="cta-inner reveal">
+      <span class="section-tag">Join the Founding 100</span>
+      <h2>100 founding stores.<br/>One city. <em>Be first.</em></h2>
+      <p>Applications are open for the HK Bitcoin City pilot program.<br/>Launching June 2026, ahead of Bitcoin Asia.</p>
+      <div class="cta-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScT1TYszNYMIk53u5FJpB5XYmlC5aam5vRnXw9eMJXNoZzZDQ/viewform?usp=sharing&ouid=111367302611666432321" target="_blank" class="btn-apply" style="font-size: 15px; padding: 16px 40px;">
+          Apply to the Pilot
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logos">
+        <img src="./images/bitcoin-hk-logo.png" alt="BAHK" style="filter: invert(1);" />
+        <img src="./images/whale-lounge-gold.png" alt="The Whale Lounge" />
+      </div>
+      <div class="footer-text">
+        A pilot program by the Bitcoin Association of Hong Kong &amp; The Whale Lounge.
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://t.me/" target="_blank">Telegram</a></li>
+        <li><a href="#" target="_blank">BAHK</a></li>
+        <li><a href="https://www.thewhalelounge.com" target="_blank">The Whale Lounge</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
