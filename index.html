@@ -367,6 +367,22 @@
       margin-top: 16px;
     }
 
+    /* ── MAP ── */
+    .map-section { padding: 88px 0; background: var(--dark-2); }
+    .map-embed {
+      border: 1px solid var(--dark-4);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--dark-3);
+      box-shadow: 0 30px 80px -40px rgba(0,0,0,0.85);
+    }
+    .map-embed iframe { display: block; width: 100%; height: 480px; border: 0; }
+    .map-cta { margin-top: 28px; text-align: center; }
+    @media (max-width: 640px) {
+      .map-section { padding: 64px 0; }
+      .map-embed iframe { height: 380px; }
+    }
+
     /* ── WHY BITCOIN ── */
     .why {
       padding: 120px 0;
@@ -835,8 +851,8 @@
         <li><a href="#why">Why Bitcoin</a></li>
         <li><a href="#how">How It Works</a></li>
         <li><a href="#device">The Device</a></li>
+        <li><a href="#map">The Map</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://luma.com/event/evt-VgFKoJSyVhxJY9c" target="_blank">Launch Event</a></li>
         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScT1TYszNYMIk53u5FJpB5XYmlC5aam5vRnXw9eMJXNoZzZDQ/viewform?usp=sharing&ouid=111367302611666432321" target="_blank" class="btn-apply">Apply Now</a></li>
       </ul>
       <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
@@ -864,7 +880,31 @@
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#how" class="btn-ghost">How It Works</a>
-        <a href="https://luma.com/event/evt-VgFKoJSyVhxJY9c" target="_blank" class="btn-ghost">Launch Event - June 11</a>
+        <a href="#map" class="btn-ghost">Explore the Map</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section" id="map">
+    <div class="section-wrap">
+      <div class="section-header reveal">
+        <span class="section-tag">The Map</span>
+        <h2 class="section-h2">Where to spend bitcoin, right now.</h2>
+        <p class="section-p">Every shop, café, bar and service in Hong Kong that accepts bitcoin — updated the moment we onboard them.</p>
+      </div>
+      <div class="map-embed reveal">
+        <iframe
+          src="https://map.hkbitcoincity.com/embed"
+          title="Hong Kong Bitcoin Map"
+          loading="lazy"
+          allow="geolocation"></iframe>
+      </div>
+      <div class="map-cta reveal">
+        <a href="https://map.hkbitcoincity.com" target="_blank" class="btn-apply">
+          Open the full map
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -1085,7 +1125,6 @@
           Apply to the Pilot
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="https://luma.com/event/evt-VgFKoJSyVhxJY9c" target="_blank" class="btn-ghost" style="font-size: 15px; padding: 16px 40px;">Launch Event - June 11</a>
       </div>
     </div>
   </section>
